@@ -127,6 +127,6 @@ def whitelist_check(context, data):
     username = username.rstrip('\0')
     if username not in whitelist:
         print("[Whitelist] %s is not in the whitelist, disconnecting client." % username)
-        context.send_crypto_packet(SystemMessagePacket("You are not on the whitelist for this proxy, please contact the owner of this proxy.", 0x1).build())
+        context.send_crypto_packet(SystemMessagePacket("Oops sorry, you are not registered in the whitelist, doom might have missed your name from the last edit. Please contact doom or kasumi", 0x1).build())
         context.transport.loseConnection()
     return data
